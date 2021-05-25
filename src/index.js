@@ -8,9 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         img.src = x;
         document.querySelector("#dog-image-container").append(img);
       })
-    );
-  
-  let storageArray = []  
+    );  
 
   fetch("https://dog.ceo/api/breeds/list/all")
     .then((res) => res.json())
@@ -20,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
       breedArray.forEach((param) => {
         let element = document.createElement("li");
         element.textContent = param;
-        storageArray.push(element)
         element.addEventListener(
           "click",
           (e) => (e.target.style.color = "red")
